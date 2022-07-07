@@ -61,8 +61,10 @@ app.use(compression())
 
 
 //routes
-// app.use('/',allRoutes,new Routes())
-app.get('/',(req,res)=>{
+app.use('/',allRoutes,new Routes())
+//solo porque sino sale el siguiente error y me rompe en heroku
+//Intento de ingreso a ruta inexistente /favicon.ico y el metodo es: GET
+app.get('/favicon.ico',(req,res)=>{
     res.send('ok')
 })
 
