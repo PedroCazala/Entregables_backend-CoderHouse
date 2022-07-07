@@ -32,7 +32,7 @@ import {mode} from './modo.js'
 mode()
 
 //Server
-const PORT = args.port ||8080 /* configuration.PORT */
+const PORT = process.env.PORT ||8080 /* configuration.PORT */
 const server = httpServer.listen(PORT,()=>{console.log(`🔥Escuchando puerto http://localhost:${server.address().port}`)})
 server.on('error', error => console.log(`Error en el servidor ${error}`))
 
