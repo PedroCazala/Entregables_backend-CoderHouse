@@ -33,7 +33,7 @@ mode()
 
 //Server
 const PORT = process.env.PORT ||8080 
-const server = httpServer.listen(PORT,()=>{console.log(`Escuchando puerto http://localhost:${server.address().port}`)})
+const server = httpServer.listen(PORT,()=>{console.log(`🔥Escuchando puerto http://localhost:${server.address().port}`)})
 server.on('error', error => console.log(`Error en el servidor ${error}`))
 
 //middleware
@@ -61,7 +61,10 @@ app.use(compression())
 
 
 //routes
-app.use('/',allRoutes,new Routes())
+// app.use('/',allRoutes,new Routes())
+app.get('/',(req,res)=>{
+    res.send('ok')
+})
 
 // logs
 import { allRoutes, logs } from './logs/logs.js';
