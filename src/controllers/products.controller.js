@@ -19,16 +19,6 @@ export default class productController{
         console.log(error, 'loginView en product controller')
       }
     }
-    async register(req,res){
-      try {
-        const data = req.body
-        console.log(data);
-        await UserModel.insertMany([data])
-        res.send('se cargaron los datos de usuario')
-      } catch (error) {
-        console.log(error, 'loginView en product controller')
-      }
-    }
 
     loginView(req,res){
       try {
